@@ -10,3 +10,5 @@ Project is using:
  - nodemon development server to prevent the stop and restart server while making changes in dev
  
  This Node.js application is connected to MongoDB database
+  - Install MongoDB and make in run in the background:
+    `brew services start mongodb`
