@@ -22,10 +22,10 @@ app.get('/checking', function (req, res) {
   });
 
 });
-app.use(require('./routes/user'));
-app.use(bodyParser.urlencoded({extended: false }));
-app.use(bodyParser.json);
 
+app.use(bodyParser.urlencoded({extended: false }));
+app.use(bodyParser.json());
+app.use(require('./routes/user'));
 // app.use('/user', user);
 app.listen((process.env.PORT || PORT), function () {
   console.log('Server is running on Port ', PORT);

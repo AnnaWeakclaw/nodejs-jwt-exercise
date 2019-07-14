@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-// const User = require('../models/user.model');
-const User = mongoose.model('User');
+const User = require('../models/user.model');
+// const User = mongoose.model('User');
 
 router.post('/s', function (req, res) {
   console.log('**********************HELLO');
