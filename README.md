@@ -5,5 +5,8 @@ Project is using:
  - express web framework
  - JWT package to authenticate user
  - mongoose schema model
- - body-parser middleware
+ - body-parser middleware (support parsing of application/json type post data or support parsing of application/x-www-form-urlencoded post data)
+ `body-parser extracts the entire body portion of an incoming request stream and exposes it on req.bod`
  - nodemon development server to prevent the stop and restart server while making changes in dev
+ 
+ This Node.js application is connected to MongoDB database
