@@ -12,3 +12,5 @@ Project is using:
  This Node.js application is connected to MongoDB database
   - Install MongoDB and make in run in the background:
     `brew services start mongodb`
+
+![PostMan screenshot](nodejs-jwt/CreateAUser.png)

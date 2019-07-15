@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user.model');
 // const User = mongoose.model('User');
 
-router.post('/s', function (req, res) {
+router.post('/register', function (req, res) {
   console.log('**********************HELLO');
   bcrypt.hash(req.body.password, 10, function (err, hash) {
     if(err) {
