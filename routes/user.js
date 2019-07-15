@@ -36,4 +36,31 @@ router.post('/register', function (req, res) {
   });
 
 });
+
+router.post('/login', function(req, res) {
+  User.findOne({email: req.body.email})
+  .exec()
+  .then(function(user) {
+    bcrypt.compare(req.body.password, user.password, function(err,result){
+      if(err) {
+        return res.status(401).json({
+          failed: "Unauthorized Access"
+        });
+      }
+      if(result) {
+        return res.status(200).json({
+          success: "Welcome to the jwt Auth"
+        });
+      }
+      return res.status(401).json({
+        failed: "Unauthorized Access"
+      });
+    });
+  })
+  .catch(error => {
+    res.status(500).json({
+      error: error
+    });
+  });
+});
 module.exports = router;

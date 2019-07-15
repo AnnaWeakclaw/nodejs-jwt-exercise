@@ -13,4 +13,5 @@ Project is using:
   - Install MongoDB and make in run in the background:
     `brew services start mongodb`
 
-![PostMan screenshot](CreateAUser.png)
+![PostMan screenshot for sign up](CreateAUser.png)
+![PostMan screenshot for login](Login.png)
