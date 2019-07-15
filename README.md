@@ -14,4 +14,5 @@ Project is using:
     `brew services start mongodb`
 
 ![PostMan screenshot for sign up](CreateAUser.png)
-![PostMan screenshot for login](Login.png)
+![PostMan screenshot for login: Unauthorized access or Welcome message](Login.png)
+![We have a token](GetTokenBack.png)

@@ -5,6 +5,8 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user.model');
 // const User = mongoose.model('User');
 
+const jwt = require('jsonwebtoken');
+
 router.post('/register', function (req, res) {
   console.log('**********************HELLO');
   bcrypt.hash(req.body.password, 10, function (err, hash) {
@@ -48,8 +50,17 @@ router.post('/login', function(req, res) {
         });
       }
       if(result) {
+        const JWToken = jwt.sign({
+          email: user.email,
+          _id: user._id
+        },
+        'secret',
+        {
+          expiresIn: '2h'
+        });
         return res.status(200).json({
-          success: "Welcome to the jwt Auth"
+          success: "Welcome to the jwt Auth",
+          token: JWToken
         });
       }
       return res.status(401).json({
@@ -63,4 +74,6 @@ router.post('/login', function(req, res) {
     });
   });
 });
+
+
 module.exports = router;
